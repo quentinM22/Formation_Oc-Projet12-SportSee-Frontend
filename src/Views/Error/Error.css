@@ -1,0 +1,34 @@
+.main > h2 {
+	font-size: 54px;
+	font-weight: 400;
+}
+.main > h3 {
+	font-weight: 300;
+}
+.main > a {
+	text-decoration: none;
+	color: red;
+}
+.main > a:hover {
+	transform: scale(1.03);
+}
+.main > a > hr {
+	width: 0px;
+	opacity: 0;
+	background-color: red;
+	border: red solid 1px;
+}
+.main > a:hover > hr {
+	width: 75%;
+	animation: width 500ms forwards;
+}
+@keyframes width {
+	0% {
+		width: 0px;
+		opacity: 0;
+	}
+	100% {
+		width: 75%;
+		opacity: 1;
+	}
+}
