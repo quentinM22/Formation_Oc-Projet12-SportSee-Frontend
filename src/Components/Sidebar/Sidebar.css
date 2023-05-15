@@ -1,0 +1,27 @@
+.sidebar {
+	grid-area: 2 / 1 / 13 / 2;
+	background-color: black;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+}
+.cmp-card-activity-container > .cmp-card-activity {
+	width: 64px;
+	height: 64px;
+	background-color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 6px;
+	border: 3px solid transparent;
+	margin: 10px;
+}
+.cmp-card-activity-container > .cmp-card-activity:hover {
+	cursor: pointer;
+	border: 3px solid red;
+}
+.sidebar > footer {
+	color: white;
+	transform: rotate(-90deg);
+}
