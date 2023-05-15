@@ -1,0 +1,9 @@
+.cmp-radarchart-container {
+	background-color: black;
+	width: calc(33.3% - 20px);
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 5px;
+}

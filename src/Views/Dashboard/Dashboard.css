@@ -1,0 +1,30 @@
+.main-title {
+	grid-area: 2 / 2 / 5 / 13;
+}
+.main-first-chart {
+	grid-area: 5 / 2 / 9 / 10;
+}
+.main-second-chart {
+	grid-area: 9 / 2 / 13 / 10;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 0 20px;
+}
+
+.main-card {
+	grid-area: 5 / 10 / 13 / 13;
+	padding: 0 30px 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: column;
+}
+.main-title {
+	margin-top: 50px;
+}
+.main-title,
+.main-first-chart,
+.main-second-chart {
+	margin-left: 50px;
+}

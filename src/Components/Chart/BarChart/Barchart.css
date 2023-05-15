@@ -1,0 +1,38 @@
+.main-first-chart {
+	background-color: #fbfbfb;
+	padding: 24px 32px 24px;
+	border-radius: 5px;
+}
+.cmp-barchart-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+.cmp-barchart-header > h3 {
+	font-weight: 500;
+	font-size: 15px;
+	font-weight: bold;
+}
+.cmp-barchart-header > ul {
+	display: flex;
+}
+.cmp-barchart-header > ul > li {
+	list-style: none;
+	padding-left: 20px;
+	display: flex;
+	align-items: center;
+	font-size: 15px;
+}
+.cmp-barchart-header > ul > li > span {
+	width: 10px;
+	height: 10px;
+	border-radius: 100%;
+	margin-right: 10px;
+}
+.cmp-barchart-header > ul > li:nth-child(1) > span {
+	background-color: black;
+}
+.cmp-barchart-header > ul > li:nth-child(2) > span {
+	background-color: #ff0000;
+}

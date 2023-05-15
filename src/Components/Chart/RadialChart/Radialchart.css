@@ -1,0 +1,14 @@
+.cmp-radialchart-container {
+	background-color: #f7f7f7;
+	border-radius: 5px;
+	height: 100%;
+	width: calc(33.3% - 20px);
+	position: relative;
+}
+.cmp-radialchart-description {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
