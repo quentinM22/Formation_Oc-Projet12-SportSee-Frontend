@@ -1,3 +1,9 @@
+.main {
+	padding: 50px;
+}
+.main > div {
+	margin-top: 30px;
+}
 .btn-user {
 	text-decoration: none;
 	border: 2px solid black;

@@ -7,7 +7,7 @@ import burger from "../../Assets/icons/burger.svg"
 
 import "./Card.css"
 
-const Card = () => {
+const Card = (props) => {
 	return (
 		<>
 			<div className="cmp-card">
@@ -15,7 +15,7 @@ const Card = () => {
 					<img src={fire} alt="" />
 				</div>
 				<div className="cmp-card-body">
-					{/* <h2>{props.keyData.calorieCount}kCal</h2> */}
+					<h2>{props.data.calorieCount}kCal</h2>
 					<p>Calorie</p>
 				</div>
 			</div>
@@ -26,7 +26,7 @@ const Card = () => {
 				</div>
 
 				<div className="cmp-card-body">
-					{/* <h2>{props.keyData.proteinCount}g</h2> */}
+					<h2>{props.data.proteinCount}g</h2>
 					<p>Portéines</p>
 				</div>
 			</div>
@@ -36,7 +36,7 @@ const Card = () => {
 				</div>
 
 				<div className="cmp-card-body">
-					{/* <h2>{props.keyData.carbohydrateCount}g</h2> */}
+					<h2>{props.data.carbohydrateCount}g</h2>
 					<p>Glucides</p>
 				</div>
 			</div>
@@ -45,7 +45,7 @@ const Card = () => {
 					<img src={burger} alt="" />
 				</div>
 				<div className="cmp-card-body">
-					{/* <h2>{props.keyData.lipidCount}g</h2> */}
+					<h2>{props.data.lipidCount}g</h2>
 					<p>Lipides</p>
 				</div>
 			</div>

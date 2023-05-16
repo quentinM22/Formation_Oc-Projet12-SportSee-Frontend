@@ -1,9 +1,16 @@
 .cmp-radarchart-container {
 	background-color: black;
-	width: calc(33.3% - 20px);
+	width: calc(33.3% - 10px);
 	height: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	border-radius: 5px;
+}
+.custom-tooltip-radar {
+	background-color: white;
+	border-radius: 50px;
+}
+.custom-tooltip-radar > .desc {
+	padding: 5px;
 }

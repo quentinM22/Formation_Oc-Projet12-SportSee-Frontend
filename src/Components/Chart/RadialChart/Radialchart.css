@@ -2,8 +2,13 @@
 	background-color: #f7f7f7;
 	border-radius: 5px;
 	height: 100%;
-	width: calc(33.3% - 20px);
+	width: calc(33.3% - 10px);
 	position: relative;
+}
+.cmp-radialchart-container > p {
+	position: absolute;
+	top: 5%;
+	left: 10%;
 }
 .cmp-radialchart-description {
 	position: absolute;

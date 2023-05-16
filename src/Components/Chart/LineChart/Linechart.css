@@ -1,7 +1,7 @@
 .cmp-linechart-container {
 	border-radius: 5px;
 	background-color: red;
-	width: calc(33.3% - 20px);
+	width: calc(33.3% - 10px);
 	height: 100%;
 }
 .cmp-linechart-header {
@@ -14,4 +14,12 @@
 	font-size: 15px;
 	font-weight: 500;
 	color: #ffffffa1;
+}
+.custom-tooltip-line {
+	background-color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 50px;
+	height: 25px;
 }
