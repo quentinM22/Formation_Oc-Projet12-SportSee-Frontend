@@ -52,7 +52,6 @@ const Dashboard = () => {
 		fetchData()
 	}, [id, useApi])
 
-	console.log(datas)
 	const userData = new UserData()
 	const getDataUser = datas ? userData.getUserInfo(datas[0]) : null
 	const getDataUserAverage = datas ? userData.getUserInfo(datas[1]) : null
@@ -68,15 +67,12 @@ const Dashboard = () => {
 		}, 1500)
 		return () => clearTimeout(timer)
 	}, [getDataUser])
-	console.log(datas == null)
-	if (isLoading) {
-		return <Loader />
-	}
-	if (!datas) {
-		return <Navigate to="/error" />
-	}
 
-	return (
+	return isLoading ? (
+		<Loader />
+	) : !datas || !getDataUser ? (
+		<Navigate to="/error" />
+	) : (
 		<>
 			<Navbar />
 			<Sidebar />

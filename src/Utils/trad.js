@@ -17,7 +17,6 @@ const traduction = (categorie) => {
 	}
 }
 export const dataSort = (data) => {
-	console.log(data)
 	const categories = Object.values(data.kind)
 	const chartData = categories.map((category) => {
 		const categoryIndex = categories.indexOf(category) + 1
