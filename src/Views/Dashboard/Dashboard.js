@@ -20,8 +20,8 @@ import "./Dashboard.css"
 
 const Dashboard = () => {
 	const { useApi } = useContext(DataContext)
-	const [datas, setDatas] = useState()
-	const [isLoading, setIsLoading] = useState(false)
+	const [datas, setDatas] = useState(null)
+	const [isLoading, setIsLoading] = useState(true)
 	const { id } = useParams()
 
 	useEffect(() => {
@@ -33,6 +33,7 @@ const Dashboard = () => {
 					setDatas(data)
 				} catch (err) {
 					console.error(err)
+					setDatas(null)
 				}
 			} else {
 				console.log("Api")
@@ -41,12 +42,14 @@ const Dashboard = () => {
 					setDatas(data)
 				} catch (err) {
 					console.error(err)
-					setDatas(err)
+					setDatas(null)
 				}
 			}
+			setTimeout(() => {
+				setIsLoading(false)
+			}, 1000)
 		}
 		fetchData()
-		setIsLoading(true)
 	}, [id, useApi])
 
 	console.log(datas)
@@ -65,11 +68,15 @@ const Dashboard = () => {
 		}, 1500)
 		return () => clearTimeout(timer)
 	}, [getDataUser])
-	return !datas || isLoading ? (
-		<Loader />
-	) : !getDataUser ? (
-		<Navigate to="/error" />
-	) : (
+	console.log(datas == null)
+	if (isLoading) {
+		return <Loader />
+	}
+	if (!datas) {
+		return <Navigate to="/error" />
+	}
+
+	return (
 		<>
 			<Navbar />
 			<Sidebar />

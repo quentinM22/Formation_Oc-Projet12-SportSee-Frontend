@@ -35,7 +35,7 @@ export const mockData = async (paramsId) => {
 		return userData
 	} catch (err) {
 		console.error(err)
-		return err
+		throw err
 	}
 }
 export const apiData = async (paramsId) => {
@@ -67,6 +67,6 @@ export const apiData = async (paramsId) => {
 		return data
 	} catch (err) {
 		console.log(err)
-		return err
+		throw err
 	}
 }
