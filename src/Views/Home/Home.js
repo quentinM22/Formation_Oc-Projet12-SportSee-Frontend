@@ -1,10 +1,17 @@
-import React from "react"
+import React, { useContext, useEffect } from "react"
+import { Link } from "react-router-dom"
+
 import Navbar from "../../Components/Navbar/Navbar"
 import Sidebar from "../../Components/Sidebar/Sidebar"
 
+import { DataContext } from "../../Context/DataContext"
 import "./Home.css"
-import { Link } from "react-router-dom"
+
 const Home = () => {
+	const { useApi, toggleApi } = useContext(DataContext)
+	useEffect(() => {
+		document.title = `SportSee - Accueil `
+	}, [])
 	return (
 		<>
 			<Navbar />
@@ -20,11 +27,8 @@ const Home = () => {
 					l'activité sportive de l'utilisateur, qui devront être développés à
 					l'aide de D3 ou de Recharts.
 				</p>
+				<button onClick={toggleApi}>{!useApi ? "APIData" : "MockData"}</button>
 				<div>
-					{/* <button onClick={toggleApi}>
-							{!useApi ? "APIData" : "MockData"}
-						</button> */}
-
 					<Link to="/user/:id12" className="btn-user">
 						🏃 Karl Dovineau
 					</Link>
