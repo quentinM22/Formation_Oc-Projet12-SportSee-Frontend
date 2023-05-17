@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { Navigate, useParams } from "react-router-dom"
 
 import Navbar from "../../Components/Navbar/Navbar"
 import Sidebar from "../../Components/Sidebar/Sidebar"
@@ -14,29 +14,46 @@ import { UserData } from "../../Class/UserData"
 
 import "./Dashboard.css"
 import ChartBar from "../../Components/Chart/BarChart/ChartBar"
+import Loader from "../../Components/Loader/Loader"
 
 const Dashboard = () => {
 	const [datas, setDatas] = useState()
+	const [isLoading, setIsLoading] = useState(false)
 	const { id } = useParams()
 
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				setDatas(await mockData(id))
+				const data = await mockData(id)
+				setDatas(data)
 			} catch (err) {
 				console.error(err)
 			}
 		}
 		fetchData()
+		setIsLoading(true)
 	}, [id])
+
 	console.log(datas)
 	const userData = new UserData()
 	const getDataUser = datas ? userData.getUserInfo(datas[0]) : null
 	const getDataUserAverage = datas ? userData.getUserInfo(datas[1]) : null
 	const getDataUserPerformance = datas ? userData.getUserInfo(datas[2]) : null
 	const getDataUserActivity = datas ? userData.getUserInfo(datas[3]) : null
-	return !datas ? (
-		<p>Error</p>
+	useEffect(() => {
+		document.title = `SportSee - Chargement `
+		const timer = setTimeout(() => {
+			setIsLoading(false)
+			if (getDataUser) {
+				document.title = `Kasa - Dashboard ${getDataUser.userInfos.firstName}`
+			}
+		}, 1500)
+		return () => clearTimeout(timer)
+	}, [getDataUser])
+	return !datas || isLoading ? (
+		<Loader />
+	) : !getDataUser ? (
+		<Navigate to="/error" />
 	) : (
 		<>
 			<Navbar />
