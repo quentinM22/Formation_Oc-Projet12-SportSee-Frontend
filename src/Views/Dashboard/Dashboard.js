@@ -1,38 +1,53 @@
-import React, { useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { Navigate, useParams } from "react-router-dom"
+
+import { DataContext } from "../../Context/DataContext"
 
 import Navbar from "../../Components/Navbar/Navbar"
 import Sidebar from "../../Components/Sidebar/Sidebar"
-
+import ChartBar from "../../Components/Chart/BarChart/ChartBar"
 import Linechart from "../../Components/Chart/LineChart/Linechart"
 import Radarchart from "../../Components/Chart/RadarChart/Radarchart"
 import Radialchart from "../../Components/Chart/RadialChart/Radialchart"
 import Card from "../../Components/Card/Card"
 
-import { mockData } from "../../Data/data"
+import Loader from "../../Components/Loader/Loader"
+
+import { apiData, mockData } from "../../Data/data"
 import { UserData } from "../../Class/UserData"
 
 import "./Dashboard.css"
-import ChartBar from "../../Components/Chart/BarChart/ChartBar"
-import Loader from "../../Components/Loader/Loader"
 
 const Dashboard = () => {
+	const { useApi } = useContext(DataContext)
 	const [datas, setDatas] = useState()
 	const [isLoading, setIsLoading] = useState(false)
 	const { id } = useParams()
 
 	useEffect(() => {
 		const fetchData = async () => {
-			try {
-				const data = await mockData(id)
-				setDatas(data)
-			} catch (err) {
-				console.error(err)
+			if (useApi) {
+				console.log("Mock")
+				try {
+					const data = await mockData(id)
+					setDatas(data)
+				} catch (err) {
+					console.error(err)
+				}
+			} else {
+				console.log("Api")
+				try {
+					const data = await apiData(id)
+					setDatas(data)
+				} catch (err) {
+					console.error(err)
+					setDatas(err)
+				}
 			}
 		}
 		fetchData()
 		setIsLoading(true)
-	}, [id])
+	}, [id, useApi])
 
 	console.log(datas)
 	const userData = new UserData()
