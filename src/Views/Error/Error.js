@@ -1,12 +1,15 @@
-import React from "react"
-import Navbar from "../../Components/Navbar/Navbar"
-import Sidebar from "../../Components/Sidebar/Sidebar"
+import React, { useEffect } from "react"
 import { Link } from "react-router-dom"
 import { routes } from "../../Router/Routes"
+import Navbar from "../../Components/Navbar/Navbar"
+import Sidebar from "../../Components/Sidebar/Sidebar"
 
 import "./Error.css"
 
 const Error = () => {
+	useEffect(() => {
+		document.title = `SportSee - Erreur  `
+	}, [])
 	return (
 		<>
 			<Navbar />

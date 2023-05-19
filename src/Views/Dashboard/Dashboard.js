@@ -76,25 +76,31 @@ const Dashboard = () => {
 		<>
 			<Navbar />
 			<Sidebar />
-			<div className="main-title">
-				<h1>
-					Bonjour{" "}
-					<span style={{ color: "red" }}>
-						{getDataUser.userInfos.firstName}
-					</span>
-				</h1>
-				<p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
-			</div>
-			<div className="main-first-chart">
-				<ChartBar data={getDataUserActivity} />
-			</div>
-			<div className="main-second-chart">
-				<Linechart data={getDataUserAverage} />
-				<Radarchart data={getDataUserPerformance} />
-				<Radialchart data={getDataUser.todayScore || getDataUser.score} />
-			</div>
-			<div className="main-card">
-				<Card data={getDataUser.keyData} />
+			<div className="main-dashboard">
+				<div className="main-title">
+					<h1>
+						Bonjour{" "}
+						<span style={{ color: "red" }}>
+							{getDataUser.userInfos.firstName}
+						</span>
+					</h1>
+					<p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+				</div>
+				<div className="items-container">
+					<div className="chart-container">
+						<div className="main-first-chart">
+							<ChartBar data={getDataUserActivity} />
+						</div>
+						<div className="main-second-chart">
+							<Linechart data={getDataUserAverage} />
+							<Radarchart data={getDataUserPerformance} />
+							<Radialchart data={getDataUser.todayScore || getDataUser.score} />
+						</div>
+					</div>
+					<div className="main-card">
+						<Card data={getDataUser.keyData} />
+					</div>
+				</div>
 			</div>
 		</>
 	)

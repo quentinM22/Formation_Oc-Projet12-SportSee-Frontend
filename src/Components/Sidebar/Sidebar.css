@@ -1,11 +1,11 @@
 .sidebar {
-	grid-area: 2 / 1 / 13 / 2;
 	background-color: black;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-around;
 }
+
 .cmp-card-activity-container > .cmp-card-activity {
 	width: 64px;
 	height: 64px;

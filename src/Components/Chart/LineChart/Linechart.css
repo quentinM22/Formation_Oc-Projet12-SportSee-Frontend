@@ -1,12 +1,9 @@
 .cmp-linechart-container {
 	border-radius: 5px;
 	background-color: red;
-	width: calc(33.3% - 10px);
-	height: 100%;
 }
 .cmp-linechart-header {
 	width: 60%;
-
 	padding-left: 25px;
 	padding-top: 15px;
 }

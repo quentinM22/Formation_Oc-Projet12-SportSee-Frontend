@@ -30,7 +30,7 @@ const Linechart = (props) => {
 			<div className="cmp-linechart-header">
 				<h3>Durée moyenne des sessions</h3>
 			</div>
-			<ResponsiveContainer width="100%" height="75%">
+			<ResponsiveContainer width="100%" height="70%">
 				<LineChart
 					width={730}
 					height={200}

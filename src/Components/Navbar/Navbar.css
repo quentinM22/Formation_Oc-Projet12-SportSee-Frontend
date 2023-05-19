@@ -46,3 +46,8 @@
 	color: red;
 	border-bottom: 1px solid red;
 }
+@media screen and (min-width: 1024px) and (max-height: 779px) {
+	.navbar {
+		width: 100%;
+	}
+}

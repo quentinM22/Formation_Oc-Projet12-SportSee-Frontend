@@ -15,7 +15,7 @@ const Sidebar = () => {
 		if (!showActivityCard) {
 			activityCard.style.display = "none"
 		} else {
-			activityCard.style.display = "block"
+			activityCard.style.display = "flex"
 		}
 	}, [url])
 	return (

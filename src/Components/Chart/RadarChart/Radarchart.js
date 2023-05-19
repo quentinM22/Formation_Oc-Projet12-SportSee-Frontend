@@ -7,8 +7,9 @@ import {
 	ResponsiveContainer,
 	Tooltip,
 } from "recharts"
-import "./Radarchart.css"
 import { dataSort } from "../../../Utils/trad"
+import "./Radarchart.css"
+
 const Radarchart = (props) => {
 	const dataPerformance = dataSort(props.data)
 	const CustomTooltip = ({ active, payload }) => {
@@ -25,7 +26,11 @@ const Radarchart = (props) => {
 		<>
 			<div className="cmp-radarchart-container">
 				<ResponsiveContainer width="100%" height="100%">
-					<RadarChart outerRadius={60} data={dataPerformance}>
+					<RadarChart
+						outerRadius={50}
+						data={dataPerformance}
+						margin={{ left: 10, right: 30 }}
+					>
 						<PolarGrid radialLines={false} />
 						<PolarAngleAxis
 							dataKey="category"

@@ -11,8 +11,6 @@ import {
 import "./Barchart.css"
 const ChartBar = (props) => {
 	const dataActivity = props.data.sessions
-	console.log("barchart", dataActivity)
-
 	const CustomTooltip = ({ active, payload }) => {
 		if (active && payload && payload.length) {
 			return (
@@ -38,8 +36,8 @@ const ChartBar = (props) => {
 				</ul>
 			</div>
 			<div className="cmp-barchart-container">
-				<ResponsiveContainer width={"100%"} height={"100%"}>
-					<BarChart data={dataActivity} margin={{ bottom: 60 }}>
+				<ResponsiveContainer width={"100%"} height={"80%"}>
+					<BarChart data={dataActivity} margin={{ top: 20, bottom: 20 }}>
 						<CartesianGrid strokeDasharray="3 3" />
 						<XAxis
 							dataKey="day"
