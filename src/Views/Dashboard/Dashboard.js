@@ -17,14 +17,19 @@ import { apiData, mockData } from "../../Data/data"
 import { UserData } from "../../Class/UserData"
 
 import "./Dashboard.css"
-
+/**
+ * View Dashboard qui affiche un tableau de bord
+ */
 const Dashboard = () => {
+	// Utilisation du contexte DataContext pour récupérer useApi
 	const { useApi } = useContext(DataContext)
+	// États pour les données, le chargement et l'ID de l'utilisateur
 	const [datas, setDatas] = useState(null)
 	const [isLoading, setIsLoading] = useState(true)
 	const { id } = useParams()
 
 	useEffect(() => {
+		// Fonction asynchrone pour récupérer les données
 		const fetchData = async () => {
 			if (useApi) {
 				console.log("Mock")
@@ -45,19 +50,22 @@ const Dashboard = () => {
 					setDatas(null)
 				}
 			}
+			// Temps d'attente simulé avant de terminer le chargement
 			setTimeout(() => {
 				setIsLoading(false)
 			}, 1000)
 		}
 		fetchData()
 	}, [id, useApi])
-
+	// Initialisation de l'objet UserData
 	const userData = new UserData()
+	// Récupération des informations utilisateur à partir des données
 	const getDataUser = datas ? userData.getUserInfo(datas[0]) : null
 	const getDataUserAverage = datas ? userData.getUserInfo(datas[1]) : null
 	const getDataUserPerformance = datas ? userData.getUserInfo(datas[2]) : null
 	const getDataUserActivity = datas ? userData.getUserInfo(datas[3]) : null
 	useEffect(() => {
+		// Mise à jour du titre de la page en fonction des données utilisateur
 		document.title = `SportSee - Chargement `
 		const timer = setTimeout(() => {
 			setIsLoading(false)
@@ -67,7 +75,9 @@ const Dashboard = () => {
 		}, 1500)
 		return () => clearTimeout(timer)
 	}, [getDataUser])
-
+	// Affichage du composant Loader pendant le chargement
+	// Redirection vers la page d'erreur si les données ou les informations utilisateur ne sont pas disponibles
+	// Affichage du tableau de bord
 	return isLoading ? (
 		<Loader />
 	) : !datas || !getDataUser ? (

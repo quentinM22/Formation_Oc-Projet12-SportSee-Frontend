@@ -4,13 +4,17 @@ import yoga from "../../Assets/icons/yoga.svg"
 import swim from "../../Assets/icons/swim.svg"
 import bike from "../../Assets/icons/bike.svg"
 import dumbbell from "../../Assets/icons/dumbbell.svg"
-
+/**
+ * Component Sidebar
+ */
 import "./Sidebar.css"
 const Sidebar = () => {
+	// URL actuelle
 	const url = window.location.pathname
 
 	useEffect(() => {
 		const activityCard = document.querySelector(".cmp-card-activity-container")
+		// Format "/user/:id"
 		const showActivityCard = /^\/user\/:id\d+$/.test(url)
 		if (!showActivityCard) {
 			activityCard.style.display = "none"

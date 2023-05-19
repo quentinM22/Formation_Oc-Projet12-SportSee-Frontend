@@ -6,7 +6,10 @@ import apple from "../../Assets/icons/apple.svg"
 import burger from "../../Assets/icons/burger.svg"
 
 import "./Card.css"
-
+/**
+ * Component Card
+ * @param {object} props
+ */
 const Card = (props) => {
 	return (
 		<>

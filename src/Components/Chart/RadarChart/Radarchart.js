@@ -9,7 +9,10 @@ import {
 } from "recharts"
 import { dataSort } from "../../../Utils/trad"
 import "./Radarchart.css"
-
+/**
+ * Component RadarChart
+ * @param {object} props
+ */
 const Radarchart = (props) => {
 	const dataPerformance = dataSort(props.data)
 	const CustomTooltip = ({ active, payload }) => {

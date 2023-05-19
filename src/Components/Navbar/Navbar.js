@@ -3,10 +3,15 @@ import { NavLink } from "react-router-dom"
 import logo from "../../Assets/logo.png"
 
 import "./Navbar.css"
+/**
+ * Component Navbar
+ */
 const Navbar = () => {
+	// URL actuelle
 	const url = window.location.pathname
 	useEffect(() => {
 		const nav = document.querySelector("nav")
+		// Format "/user/:id"
 		const showNav = /^\/user\/:id\d+$/.test(url)
 		if (!showNav) {
 			nav.style.display = "none"

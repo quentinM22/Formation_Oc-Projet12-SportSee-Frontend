@@ -5,7 +5,9 @@ import Navbar from "../../Components/Navbar/Navbar"
 import Sidebar from "../../Components/Sidebar/Sidebar"
 
 import "./Error.css"
-
+/**
+ * View Error qui affiche la page d'erreur
+ */
 const Error = () => {
 	useEffect(() => {
 		document.title = `SportSee - Erreur  `

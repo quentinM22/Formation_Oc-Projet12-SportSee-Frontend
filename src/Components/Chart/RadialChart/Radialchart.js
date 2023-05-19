@@ -7,6 +7,10 @@ import {
 	PolarRadiusAxis,
 } from "recharts"
 import "./Radialchart.css"
+/**
+ * Component RadialChart
+ * @param {number} props
+ */
 const Radialchart = (props) => {
 	const score = props.data * 100
 	const data = [{ percentValue: score }]

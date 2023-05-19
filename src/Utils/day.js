@@ -1,3 +1,8 @@
+/**
+ * Convertit un numéro de jour en lettre
+ * @param {number} day - Le numéro de jour à convertir
+ * @returns {string} - La lettre correspondante au numéro de jour
+ */
 export const dayNumberToLetter = (day) => {
 	switch (day) {
 		case 1:

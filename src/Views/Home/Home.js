@@ -6,8 +6,11 @@ import Sidebar from "../../Components/Sidebar/Sidebar"
 
 import { DataContext } from "../../Context/DataContext"
 import "./Home.css"
-
+/**
+ * View Home qui affiche la page d'acceuil
+ */
 const Home = () => {
+	// Utilisation du contexte DataContext utiliser useApi et toggleApi
 	const { useApi, toggleApi } = useContext(DataContext)
 	useEffect(() => {
 		document.title = `SportSee - Accueil `

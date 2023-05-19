@@ -12,6 +12,10 @@ import {
 import { dayNumberToLetter } from "../../../Utils/day"
 
 import "./Linechart.css"
+/**
+ * Component LineChart
+ * @param {object} props
+ */
 const Linechart = (props) => {
 	const dataAverage = props.data.sessions
 	const CustomTooltip = ({ active, payload }) => {

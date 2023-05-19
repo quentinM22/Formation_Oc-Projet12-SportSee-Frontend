@@ -9,6 +9,10 @@ import {
 	ResponsiveContainer,
 } from "recharts"
 import "./Barchart.css"
+/**
+ * Component ChartBar
+ * @param {object} props
+ */
 const ChartBar = (props) => {
 	const dataActivity = props.data.sessions
 	const CustomTooltip = ({ active, payload }) => {
