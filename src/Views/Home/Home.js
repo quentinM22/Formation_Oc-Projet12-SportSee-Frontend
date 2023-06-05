@@ -32,11 +32,11 @@ const Home = () => {
 				</p>
 				<button onClick={toggleApi}>{!useApi ? "APIData" : "MockData"}</button>
 				<div>
-					<Link to="/user/:id12" className="btn-user">
+					<Link to="/user/12" className="btn-user">
 						🏃 Karl Dovineau
 					</Link>
 
-					<Link to="/user/:id18" className="btn-user">
+					<Link to="/user/18" className="btn-user">
 						🏃‍♀️ Cecilia Ratorez
 					</Link>
 				</div>

@@ -15,7 +15,7 @@ const Sidebar = () => {
 	useEffect(() => {
 		const activityCard = document.querySelector(".cmp-card-activity-container")
 		// Format "/user/:id"
-		const showActivityCard = /^\/user\/:id\d+$/.test(url)
+		const showActivityCard = /^\/user\/\d+$/.test(url)
 		if (!showActivityCard) {
 			activityCard.style.display = "none"
 		} else {

@@ -8,7 +8,7 @@ import { getData } from "./fetch"
  */
 export const mockData = async (paramsId) => {
 	// Convertit l'identifiant en nombre entier en extrayant la partie numérique de la chaîne
-	const userId = parseInt(paramsId.split(":id")[1])
+	const userId = parseInt(paramsId)
 	// Crée une instance de la classe MockData
 	const mockData = new MockData()
 	// Obtient les chemins d'accès aux données de l'instance MockData
@@ -55,7 +55,7 @@ export const mockData = async (paramsId) => {
  */
 export const apiData = async (paramsId) => {
 	// Convertit l'identifiant en nombre entier en extrayant la partie numérique de la chaîne
-	const userId = parseInt(paramsId.split(":id")[1])
+	const userId = parseInt(paramsId)
 	// Crée une instance de la classe ApiData avec l'identifiant de l'utilisateur
 	const apiData = new ApiData(userId)
 	// Obtient les chemins d'accès aux données de l'utilisateur de l'instance ApiData

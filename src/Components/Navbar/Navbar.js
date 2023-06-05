@@ -12,7 +12,7 @@ const Navbar = () => {
 	useEffect(() => {
 		const nav = document.querySelector("nav")
 		// Format "/user/:id"
-		const showNav = /^\/user\/:id\d+$/.test(url)
+		const showNav = /^\/user\/\d+$/.test(url)
 		if (!showNav) {
 			nav.style.display = "none"
 		} else {
