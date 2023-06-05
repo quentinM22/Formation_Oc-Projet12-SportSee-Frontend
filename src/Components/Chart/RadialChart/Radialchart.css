@@ -1,8 +1,9 @@
 .cmp-radialchart-container {
-	background-color: #f7f7f7;
+	background-color: #FBFBFB;
 	border-radius: 5px;
 	position: relative;
 }
+
 .cmp-radialchart-container > p {
 	position: absolute;
 	top: 5%;
@@ -14,4 +15,10 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 	text-align: center;
+}
+.cmp-radialchart-description > h2 {
+	color: #282D30;
+}
+.cmp-radialchart-description > p{
+	color: #74798C;
 }

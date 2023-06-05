@@ -5,6 +5,7 @@ import {
 	ResponsiveContainer,
 	PolarAngleAxis,
 	PolarRadiusAxis,
+
 } from "recharts"
 import "./Radialchart.css"
 /**
@@ -32,26 +33,35 @@ const Radialchart = (props) => {
 						domain={[0, 100]}
 						dataKey={"percentValue"}
 						angleAxisId={0}
+						background={{ fill: "#ffffff" }}
 						tick={false}
 					/>
 					<PolarRadiusAxis tick={false} axisLine={false} />
+					
+					<defs>
+						<mask id="mask">
+							<circle cx="50%" cy="50%" r="72%" fill="white" />
+						</mask>
+        			</defs>
+
 					<RadialBar
-						minAngle={5}
-						fill="#E60000"
-						background={{ fill: "#fff" }}
-						position="center"
-						clockWise={true}
-						dataKey={"percentValue"}
-						legendType="square"
-						data={data}
-						cornerRadius="50%"
+					minAngle={5}
+					fill="#E60000"
+					position="center"
+					clockWise={true}
+					dataKey={"percentValue"}
+					legendType="square"
+					data={data}
+					cornerRadius="50%"
+					mask="url(#mask)"
+					strokeWidth={10}
 					/>
 				</RadialBarChart>
 			</ResponsiveContainer>
 
 			<div className="cmp-radialchart-description">
 				<h2>{score} %</h2>
-				<p>de votre objectifs</p>
+				<p>de votre objectif</p>
 			</div>
 		</div>
 	)
