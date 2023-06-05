@@ -19,8 +19,8 @@ const ChartBar = (props) => {
 		if (active && payload && payload.length) {
 			return (
 				<div className="custom-tooltip-bar">
-					<p className="desc">{payload[0].value + "kg"}</p>
-					<p className="desc">{payload[1].value + "Kcal"}</p>
+					<p className="desc">{payload[1].value + "kg"}</p>
+					<p className="desc">{payload[0].value + "Kcal"}</p>
 				</div>
 			)
 		}
@@ -42,10 +42,10 @@ const ChartBar = (props) => {
 			<div className="cmp-barchart-container">
 				<ResponsiveContainer width={"100%"} height={"80%"}>
 					<BarChart data={dataActivity} margin={{ top: 20, bottom: 20 }}>
-						<CartesianGrid strokeDasharray="3 3" />
+						<CartesianGrid strokeDasharray="3 3" vertical={false} />
 						<XAxis
 							dataKey="day"
-							tickFormatter={(day) => day.split("-")[2]}
+							tickFormatter={(day) => day.split("-0")[2]}
 							axisLine={false}
 							tickLine={false}
 						/>
@@ -64,6 +64,7 @@ const ChartBar = (props) => {
 							domain={[0, "dataMax"]}
 							tickCount={100}
 							yAxisId="calories"
+							axisLine={false}
 							hide
 						/>
 
