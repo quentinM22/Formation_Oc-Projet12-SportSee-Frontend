@@ -9,9 +9,9 @@ import {
 	ResponsiveContainer,
 } from "recharts"
 
-import { dayNumberToLetter } from "../../../Utils/day"
 
 import "./Linechart.css"
+import { UserData } from "../../../Class/UserData"
 /**
  * Component LineChart
  * @param {object} props
@@ -48,7 +48,7 @@ const Linechart = (props) => {
 						</linearGradient>
 					</defs>
 					<XAxis
-						dataKey={(data) => dayNumberToLetter(data.day)}
+						dataKey={(data) => new UserData().dayNumberToLetter(data.day)}
 						axisLine={false}
 						tickLine={false}
 						stroke="#FFFFFF"
